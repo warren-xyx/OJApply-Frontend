@@ -1,0 +1,23 @@
+// Query all users
+GET http://localhost:8848/users
+
+###
+
+// Create a new user
+POST http://localhost:8848/users
+Content-Type: application/json
+
+{
+  "name": ""
+}
+
+###
+
+PUT http://localhost:8848/users/4
+Content-Type: application/json
+
+{
+  "name": "yzw",
+  "email": null,
+  "password": null
+}

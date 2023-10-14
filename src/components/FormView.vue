@@ -15,7 +15,7 @@
       <!-- <v-text-field v-model="Profile_photo" label="Profile_photo"></v-text-field> -->
       <v-text-field v-model="Phone_number" label="Phone Number"></v-text-field>
       <v-text-field v-model="Attachment" label="Attachment"></v-text-field>
-      <v-btn type="submit" block class="mt-2" @click="apply">Apply</v-btn>
+      <v-btn type="submit" block class="mt-2" @click="apply">Apply{{ User_id }}</v-btn>
       <v-btn type="submit" block class="mt-2" @click="update">Update</v-btn>
 
     </v-form>
@@ -24,10 +24,11 @@
 
 <script>
 import axios from 'axios';
+import store from '@/store';
 
 export default {
   data: () => ({
-    User_id: 1,
+    User_id: store.User_id,
     Gender: true,
     Name: '',
     Student_id: '',

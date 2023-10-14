@@ -1,11 +1,12 @@
 <template>
   <v-btn type="submit" block class="mt-2" @click="fetchForm">Fetchform</v-btn>
-  <v-text-field v-model="User_id" label="User ID"></v-text-field>
+
   <v-table>
     <thead>
       <tr>
         <th class="text-left">
           User Id
+          {{ store.user_id }}
         </th>
         <th class="text-left">
           Name
@@ -28,12 +29,12 @@
 <script setup lang="ts">
 import axios from 'axios';
 import { ref } from 'vue';
+import {store} from '@/components/store';
 
 const formData = ref([]);
-let User_id = ref();
 
 const fetchForm = () => {
-  axios.get('http://127.0.0.1:8848/form/' + User_id.value)
+  axios.get('http://127.0.0.1:8848/form/' + store.user_id)
     .then(response => {
       console.log(JSON.stringify(response.data));
       formData.value=response.data.data;

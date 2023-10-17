@@ -8,7 +8,7 @@
       <v-btn to="/sign">Sign</v-btn>
       <v-btn to="/user">User</v-btn>
       <v-btn to="/admin">Admin</v-btn>
-      
+      <v-btn to="/example">Example</v-btn>
     </v-app-bar-title>
   </v-app-bar>
 </template>
